@@ -520,16 +520,10 @@ object DayFour extends App{
   )
 
 
-  val resultOne = puzzle_input.map {
-    list =>
-      list.split(" ").toList.groupBy(identity).collect { case (x, List(_, _, _*)) => x}.toList.length
-  }.filter(_ == 0).length
+  val resultOne = puzzle_input.map { list =>list.split(" ").toList.groupBy(identity).collect { case (x, List(_, _, _*)) => x}.toList.length}.filter(_ == 0).length
   println("Result is: " + resultOne)
 
-  val resultTwo = puzzle_input.map {
-    list =>
-      list.split(" ").toList.map{_.sorted}.groupBy(identity).collect { case (x, List(_, _, _*)) => x}.toList.length
-  }.filter(_ == 0).length
+  val resultTwo = puzzle_input.map { list => list.split(" ").toList.map{_.sorted}.groupBy(identity).collect { case (x, List(_, _, _*)) => x}.toList.length}.filter(_ == 0).length
   println("Result is: " + resultTwo)
 
 }
